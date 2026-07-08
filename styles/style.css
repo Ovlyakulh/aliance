@@ -2,22 +2,65 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Bebas Neue Book";
+  src: url(../fonts/BebasNeueBook.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
 body {
   font-family: "Noto Sans", sans-serif;
 }
+.container {
+  max-width: 1440px;
+  margin: auto;
+}
+.header {
+  height: 100vh;
+}
+.header-images {
+  background-image: url("../images/header-bg-img.jpg");
+  background-size: cover; /* растягивает картинку на всю область блока */
+  background-repeat: no-repeat; /* запрещает повторение изображения */
+  background-position: center; /* центрирует изображение */
 
+  /* Родитель для absolute.
+     Все элементы с position: absolute внутри будут позиционироваться относительно этого блока. */
+  position: relative;
+}
 .header-navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3c3a3a;
   color: #ffffff;
+  position: relative; /* чтобы шапка вышел на верхний слой перед затемнением */
+  border-bottom: 1px solid #ebebf033;
 }
-
+/* теперь чтобы добавить затемнение на изображение */
+.header-images::before {
+  content: "";
+  /* Растягиваем псевдоэлемент поверх родителя, чтобы сделать затемнение изображения. */
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #292d3399;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* обозначать что этот слой будет лежать в самом низу */
+}
 .navbar-logo-images {
-  margin: 15px 50px;
+  margin: 25px 50px;
 }
-
+.navbar-logo-link {
+  border-right: 1px solid #ebebf033;
+  height: 100%;
+}
 .header-navbar-list {
   margin: 0;
   display: flex;
@@ -54,10 +97,64 @@ body {
   background: #3a71d1;
   color: inherit;
   border: none;
-  padding: 25px 60px;
+  padding: 34px 60px;
   flex-shrink: 0; /* помогает не ломаться размеру точнее не разрешает самому уменьшаться */
+  flex-shrink: 0;
 }
 
 .header-button {
   height: 100%;
+}
+.seporator {
+  max-width: 150px;
+  height: 2px;
+}
+.header-content {
+  padding-top: 150px;
+  position: relative;
+  color: #ffffff;
+}
+.header-seporator {
+  background-color: #5c8ee5;
+}
+.header-title {
+  font-family: "Bebas Neue Book";
+  max-width: 1080px;
+  margin: 30px 0;
+  font-size: 80px;
+  line-height: 120%;
+}
+.header-text {
+  font-style: normal;
+  max-width: 720px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  margin-bottom: 50px;
+}
+.header-features {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 100px;
+  position: relative;
+  color: #ffffff;
+  padding: 0;
+}
+.header-features-item {
+  max-width: 288px;
+  height: 168px;
+  list-style-type: none;
+  padding: 30px 50px;
+  border: 1px solid #ebebf033;
+}
+.header-features-item:not(:last-child) {
+  border-right: none;
+}
+.header-features-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  max-width: 188px;
+  padding-top: 20px;
 }
