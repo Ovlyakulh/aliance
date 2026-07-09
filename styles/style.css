@@ -22,6 +22,18 @@ body {
   max-width: 1440px;
   margin: auto;
 }
+.header-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  position: fixed; /* чтобы шапка вышел на верхний слой перед затемнением */
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: 1px solid #ebebf033;
+  width: 100%;
+}
 .header {
   height: 100vh;
 }
@@ -34,14 +46,6 @@ body {
   /* Родитель для absolute.
      Все элементы с position: absolute внутри будут позиционироваться относительно этого блока. */
   position: relative;
-}
-.header-navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  position: relative; /* чтобы шапка вышел на верхний слой перед затемнением */
-  border-bottom: 1px solid #ebebf033;
 }
 /* теперь чтобы добавить затемнение на изображение */
 .header-images::before {
@@ -117,6 +121,7 @@ body {
   color: #ffffff;
 }
 .header-seporator {
+  margin-top: 95px;
 }
 .header-title {
   font-family: "Bebas Neue Book";
@@ -211,5 +216,3 @@ body {
   background: #5c8ee5;
   margin-right: 20px;
 }
-
-
