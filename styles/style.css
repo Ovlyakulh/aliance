@@ -22,7 +22,7 @@ body {
   max-width: 1440px;
   margin: auto;
 }
-.header-navbar {
+.navbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +33,15 @@ body {
   z-index: 2;
   border-bottom: 1px solid #ebebf033;
   width: 100%;
+  transition: 0.4s;
+}
+.navbar-light {
+  background-color: #fff;
+  color: #292d33;
+  transition: background-color 0.2s;
+}
+.navbar-light .header-logo-path {
+  fill: #292d33;
 }
 .header {
   height: 100vh;
