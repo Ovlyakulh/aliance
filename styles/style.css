@@ -34,11 +34,17 @@ body {
   border-bottom: 1px solid #ebebf033;
   width: 100%;
   transition: 0.4s;
+  height: 94px;
+}
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
 }
 .navbar-light {
   background-color: #fff;
   color: #292d33;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, height 0.2s;
+  height: 74px;
 }
 .navbar-light .header-logo-path {
   fill: #292d33;
