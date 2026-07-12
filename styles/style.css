@@ -21,6 +21,8 @@ body {
 .container {
   max-width: 1440px;
   margin: auto;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 .navbar {
   display: flex;
@@ -34,29 +36,33 @@ body {
   border-bottom: 1px solid #ebebf033;
   width: 100%;
   transition: 0.4s;
-  height: 94px;
+  height: 96px;
 }
 .navbar-logo-link {
   display: flex;
   align-items: center;
+  padding: 25px 50px;
+  padding-top: 30px;
 }
 .navbar-light {
   background-color: #fff;
   color: #292d33;
-  transition: background-color 0.2s, height 0.2s;
+  transition:
+    background-color 0.2s,
+    height 0.2s;
   height: 74px;
 }
 .navbar-light .header-logo-path {
   fill: #292d33;
 }
 .header {
-  height: 100vh;
+  min-height: 100vh;
 }
 .header-images {
   background-image: url("../images/header-bg-img.jpg");
   background-size: cover; /* растягивает картинку на всю область блока */
   background-repeat: no-repeat; /* запрещает повторение изображения */
-  background-position: center; /* центрирует изображение */
+  background-position: center bottom -40px; /* центрирует изображение */
 
   /* Родитель для absolute.
      Все элементы с position: absolute внутри будут позиционироваться относительно этого блока. */
@@ -68,8 +74,8 @@ body {
   /* Растягиваем псевдоэлемент поверх родителя, чтобы сделать затемнение изображения. */
   position: absolute;
   top: 0;
-  right: 0;
-  background-color: #292d3399;
+  left: 0;
+  background-color: rgba(41, 45, 51, 0.75);
   width: 100%;
   height: 100%;
   z-index: 0; /* обозначать что этот слой будет лежать в самом низу */
@@ -87,10 +93,14 @@ body {
   flex-grow: 1; /* увеличиваеться на всю ширину свободного пространства */
   align-items: center;
   list-style-type: none;
-  gap: 50px;
+  gap: 44px;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
+  padding: 0px 0 0 42px;
+}
+.header-navbar-item {
+  margin: 5px 0 0px 9px;
 }
 
 .header-navbar-link,
@@ -105,6 +115,8 @@ body {
   align-items: center;
   gap: 10px;
   margin-right: 50px;
+  padding-top: 6px;
+  margin: -2px 50px 0 0px;
 }
 
 .button {
@@ -117,13 +129,14 @@ body {
   background: #3a71d1;
   color: inherit;
   border: none;
-  padding: 34px 60px;
   flex-shrink: 0; /* помогает не ломаться размеру точнее не разрешает самому уменьшаться */
   flex-shrink: 0;
 }
 
 .header-button {
-  height: 100%;
+  padding: 3px 0px 0 35px;
+  width: 266px;
+  height: 102px;
 }
 .seporator {
   max-width: 150px;
@@ -134,24 +147,35 @@ body {
   padding-top: 150px;
   position: relative;
   color: #ffffff;
+  margin-left: 16px;
+}
+.header-content .button {
+  padding: 25px 63px;
 }
 .header-seporator {
   margin-top: 95px;
 }
 .header-title {
+  letter-spacing: 0.6px;
+  word-spacing: 0px;
   font-family: "Bebas Neue Book";
   max-width: 1080px;
   margin: 30px 0;
   font-size: 80px;
   line-height: 120%;
+  font-weight: 600;
+  margin: 31px 0 0 3px;
 }
 .header-text {
+  margin-top: 30px;
   font-style: normal;
   max-width: 720px;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
   margin-bottom: 50px;
+  padding: 2px 0 0 3px;
+  word-spacing: 1.4px;
 }
 .header-features {
   display: flex;
@@ -161,12 +185,13 @@ body {
   position: relative;
   color: #ffffff;
   padding: 0;
+  margin-bottom: 0;
 }
 .header-features-item {
-  max-width: 288px;
+  width: 288px;
   height: 168px;
   list-style-type: none;
-  padding: 30px 50px;
+  padding: 34px 68px;
   border: 1px solid #ebebf033;
 }
 .header-features-item:not(:last-child) {
@@ -180,7 +205,7 @@ body {
   padding-top: 20px;
 }
 .steps {
-  margin: 150px 0 30px 0;
+  margin: 150px 0 0px 0;
 }
 .steps-title {
   font-family: "Bebas Neue Book";
