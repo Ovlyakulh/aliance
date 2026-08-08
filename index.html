@@ -14,7 +14,94 @@
     <title>ALIANCE PRODUCTION</title>
   </head>
   <body>
+    <section class="mobile-menu">
+      <ul class="mobile-menu-nav">
+        <li class="mobile-menu-nav-item">
+          <a href="#" class="mobile-menu-nav-link">О компании</a>
+        </li>
+        <li class="mobile-menu-nav-item">
+          <a href="#" class="mobile-menu-nav-link">Контрактное производство</a>
+          <ul class="mobile-menu-nav-subtitle">
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Автомобильная химия</a>
+            </li>
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Бытовая химия</a>
+            </li>
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Дезинфицирующие средства</a>
+            </li>
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Пищевые аэрозоли</a>
+            </li>
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Косметическая продукция</a>
+            </li>
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Краски аэрозольные</a>
+            </li>
+          </ul>
+        </li>
+        <li class="mobile-menu-nav-item">
+          <a href="#" class="mobile-menu-nav-link">Собственные марки</a>
+          <ul class="mobile-menu-nav-subtitle">
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Автохимия AG-Tech</a>
+            </li>
+            <li class="mobile-menu-nav-subtitle-item">
+              <a href="#">Автохимия AP</a>
+            </li>
+          </ul>
+        </li>
+        <li class="mobile-menu-nav-item">
+          <a href="#" class="mobile-menu-nav-link">Новости</a>
+        </li>
+        <li class="mobile-menu-nav-item">
+          <a href="#" class="mobile-menu-nav-link">Контакты</a>
+        </li>
+      </ul>
+      <section class="mobile-contacts">
+        <a href="tel:+74996861014" class="mobile-phone">+7 (499) 686-10-14</a>
+        <address class="mobile-address">
+          <svg class="mark" width="16" height="17">
+            <use href="images/sprit.svg#mark"></use>
+          </svg>
+          <span class="mobile-addres-text"
+            >г. Мосвка, Холодильный пер. 4к1с8</span
+          >
+        </address>
+        <a href="mailto:a.dragunov@tdaliance.ru" class="mobile-mail">
+          <svg class="mail" width="20" height="12">
+            <use href="images/sprit.svg#mail"></use>
+          </svg>
+          <span class="mobile-mail-adress">a.dragunov@tdaliance.ru</span>
+        </a>
+        <section class="mobile-sosial">
+          <svg class="vk" width="16" height="17">
+            <use href="images/sprit.svg#vk"></use>
+          </svg>
+          <svg class="instagram" width="16" height="16">
+            <use href="images/sprit.svg#instagram"></use>
+          </svg>
+        </section>
+      </section>
+    </section>
     <nav class="navbar">
+      <section class="burger">
+        <a href="#" class="burger-link">
+          <ul class="mobile-menu-toggle">
+            <li class="mobile-menu-toggle-item">
+              <span class="mobile-menu-toggle-line"></span>
+            </li>
+            <li class="mobile-menu-toggle-item">
+              <span class="mobile-menu-toggle-line"></span>
+            </li>
+            <li class="mobile-menu-toggle-item">
+              <span class="mobile-menu-toggle-line"></span>
+            </li>
+          </ul>
+        </a>
+      </section>
       <a href="./images/logo-light.svg" class="navbar-logo-link">
         <svg class="logo-svg">
           <use href="images/sprit.svg#logo-light"></use>
@@ -45,7 +132,15 @@
           >+7 (499) 686-10-14</a
         >
       </div>
-      <button class="button header-button">Получить консультацию</button>
+      <button class="button header-button">
+        <a href="tel:+74996861014" class="header-phone-link">
+          <svg class="button-phone" width="24" height="24">
+            <use href="images/sprit.svg#phone"></use>
+          </svg>
+        </a>
+
+        <p class="header-button-text">Получить консультацию</p>
+      </button>
     </nav>
     <!-- header-navbar -->
     <header class="header header-images">
@@ -53,7 +148,8 @@
         <div class="header-content">
           <div class="seporator header-seporator"></div>
           <h1 class="header-title">
-            Комплексное обеспечение товарами<br> и расходными материалами бизнеса
+            Комплексное обеспечение товарами<br />
+            и расходными материалами бизнеса
           </h1>
           <p class="header-text">
             Высокий уровень вовлечения представителей целевой аудитории является
