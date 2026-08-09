@@ -386,11 +386,15 @@ body {
   .navbar-light .mobile-menu-toggle-line {
     background-color: #000;
   }
+  .mobile-menu-toggle-item {
+    transition: transform 0.2s;
+  }
   .mobile-menu-toggle-line {
     display: block;
     width: 40px;
     height: 1px;
     background-color: #fff;
+    
   }
   .burger-link {
     margin: 0 1.5rem;
@@ -466,10 +470,20 @@ body {
   .mobile-address,
   .mobile-mail,
   .mobile-sosial {
-    display: flex;
+    display: block;
     margin-top: 1.25rem;
     gap: .625rem;
     color: #292d33;
     margin-left: .9375rem;
+  }
+  .close-menu .mobile-menu-toggle-item:nth-child(2) {
+    display: none;
+  }
+  .close-menu .mobile-menu-toggle-item:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .close-menu .mobile-menu-toggle-item:nth-child(3) {
+    transform: rotate(-45deg);
+    margin-top: -32px;
   }
 }
