@@ -164,12 +164,20 @@ body {
   display: none;
 }
 .slider-buttons {
-  display: flex;
-  height: 44px;
-  align-items: center;
-  gap: 154px;
-  justify-content: center;
+  display: none;
+
 }
+.slider-button-prev,
+.slider-button-next{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-basis: 50%;
+  border: 1px solid rgba(235, 235, 240, 0.2);
+  cursor: pointer;
+}
+.slider-button-next{}
 
 .header-button {
   display: flex;
@@ -219,27 +227,24 @@ body {
 .header-features {
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: stretch;
   margin-top: 6.25rem;
   position: relative;
   color: #ffffff;
   padding: 0;
   margin-bottom: 0;
+  margin-right: 0;
 }
 .header-features-item {
-  
-  list-style-type: none;
-  /* padding: 2.125rem 3rem; */
   padding: 2.125rem 3.1875rem;
   border: 0.0625rem solid #ebebf033;
   min-height: 100%;
-}
-.header-features.header-features-item {
   width: 250px;
   height: 140px;
 }
-.header-features-item:not(:last-child) {
-  border-right: none;
+.header-features.header-features-item {
+  width: 250px;
+  height: 168px;
 }
 .header-features-text {
   font-weight: 400;
@@ -247,11 +252,29 @@ body {
   line-height: 160%;
   max-width: 11.75rem;
   padding-top: 1.25rem;
+  margin-bottom: 20px;
+}
+.slider-button-prev {
 }
 .steps {
   margin: 9.375rem 0 0rem 0;
   font-weight: 400;
 }
+.slider-buttons .background-blau {
+  background-color: #5c8ee5;
+}
+.steps .slider-buttons .slider-button-prev.background-blau,
+.steps .slider-buttons .slider-button-next.background-blau {
+  display: none;
+  flex-basis: 60px;
+  height: 40px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+/* .background-blau, .sped {
+  padding: 10px;
+} */
 .steps-title {
   font-family: "Bebas Neue Book";
   font-size: 3.75rem;
@@ -347,7 +370,7 @@ body {
     display: none;
   }
   .container {
-    max-width: 70rem;
+    max-width: 65rem;
   }
   .header-content .button {
     padding: 20px 53px;
@@ -371,10 +394,26 @@ body {
   .header-title {
     font-size: 4rem;
   }
+  .slider-buttons {
+    display: flex;  
+  }
+  .steps-list {
+    padding-left: 5px;
+  }
+  .steps .slider-buttons {
+    display: flex;
+    justify-content: end;
+  }
+  .steps .slider-buttons .slider-button-prev.background-blau,
+.steps .slider-buttons .slider-button-next.background-blau {
+  display: flex;
+  flex-basis: 60px;
+  border-color: #5c8ee5;;
+}
 }
 @media (max-width: 992px) {
   .container {
-    max-width: 60rem;
+    max-width: 55rem;
   }
   .header-navbar-item {
     width: 60px;
@@ -511,7 +550,7 @@ body {
 }
 @media (max-width: 768px) {
   .container {
-    max-width: 40rem;
+    max-width: 50rem;
   }
   .header-title {
     font-size: 2.5rem;
