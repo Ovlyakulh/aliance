@@ -1,16 +1,19 @@
 const navbar = document.querySelector(".navbar");
-const logo = document.querySelector(".logo-svg use");
+const logoLight = document.querySelector(".logo-light");
+const logo = document.querySelector(".logo");
 const mMenuToggle = document.querySelector(".burger-link");
 const menu = document.querySelector(".mobile-menu");
 
 const lightModeOn = (event) => {
   navbar.classList.add("navbar-light");
-  logo.href.baseVal = "images/sprit.svg#logo";
+  logo.style.display = "block";
+  logoLight.style.display = "none";
 };
 
 const lightModeOff = (event) => {
   navbar.classList.remove("navbar-light");
-  logo.href.baseVal = "images/sprit.svg#logo-light";
+  logo.style.display = "none";
+  logoLight.style.display = "block";
 };
 
 const openMenu = (event) => {

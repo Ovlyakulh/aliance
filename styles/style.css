@@ -71,6 +71,9 @@ body {
 .navbar-light .header-button {
   height: 4.8rem;
 }
+.logo {
+  display: none;
+}
 .logo-svg {
   width: 9rem;
   height: 2.75rem;
