@@ -16,6 +16,7 @@
   </head>
   <body>
     <section class="mobile-menu">
+      <h2 class="visually-hidden">Контактная информация</h2>
       <ul class="mobile-menu-nav">
         <li class="mobile-menu-nav-item">
           <a href="#" class="mobile-menu-nav-link">О компании</a>
@@ -62,6 +63,7 @@
         </li>
       </ul>
       <section class="mobile-contacts">
+        <h2 class="visually-hidden">Все Контакты</h2>
         <a href="tel:+74996861014" class="mobile-phone">+7 (499) 686-10-14</a>
         <address class="mobile-address">
           <svg class="mark" width="16" height="17">
@@ -77,18 +79,23 @@
           </svg>
           <span class="mobile-mail-adress">a.dragunov@tdaliance.ru</span>
         </a>
-        <section class="mobile-sosial">
-          <svg class="vk" width="16" height="17">
+        <nav class="mobile-sosial">
+          <a href="#" class="mobile-sosial-link">
+            <svg class="vk" width="16" height="17">
             <use href="images/sprit.svg#vk"></use>
           </svg>
-          <svg class="instagram" width="16" height="16">
+          </a>
+          <a href="#" class="mobile-sosial-link">
+            <svg class="instagram" width="16" height="16">
             <use href="images/sprit.svg#instagram"></use>
           </svg>
-        </section>
+          </a>
+        </nav>
       </section>
     </section>
     <nav class="navbar">
       <section class="burger">
+        <h2 class="visually-hidden">Хлебная крошка</h2>
         <a href="#" class="burger-link">
           <ul class="mobile-menu-toggle">
             <li class="mobile-menu-toggle-item">
@@ -113,7 +120,8 @@
       </a>
       <ul class="header-navbar-list">
         <li class="header-navbar-item">
-          <a href="#" class="header-navbar-link">О компании</a>
+          <a href="#" class="header-navbar-link">О компании
+          </a>
         </li>
         <li class="header-navbar-item">
           <a href="#" class="header-navbar-link">Контрактное производство</a>
@@ -136,14 +144,15 @@
           >+7 (499) 686-10-14</a
         >
       </div>
-      <button class="button header-button">
+      <div class="header-phone-blau">
         <a href="tel:+74996861014" class="header-phone-link">
-          <svg class="button-phone" width="24" height="24">
+          <svg class="phone" width="24" height="24">
             <use href="images/sprit.svg#phone"></use>
           </svg>
         </a>
-
-        <p class="header-button-text">Получить консультацию</p>
+      </div>
+      <button class="button header-button">
+        <span class="header-button-text">Получить консультацию</span>
       </button>
     </nav>
     <!-- header-navbar -->
@@ -174,7 +183,8 @@
               <svg class="time" width="21" height="28">
                 <use href="images/sprit.svg#time"></use>
               </svg>
-              <p class="header-features-text">Непрерывная работа c 2017 года</p>
+              <p class="header-features-text">Непрерывная работа c 2017 года
+              </p>
             </li>
             <li class="swiper-slide header-features-item">
               <svg class="certificat" width="26" height="26">
