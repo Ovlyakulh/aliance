@@ -45,11 +45,26 @@ const swiper = new Swiper(".swiper", {
   slidesPerView: "auto",
   spaceBetween: 0,
 
-  watchOverflow: false,
-
   navigation: {
     nextEl: ".slider-button-next",
     prevEl: ".slider-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
+
+const stepsWiper = new Swiper(".steps-swiper", {
+  speed: 400,
+
+  slidesPerView: "auto",
+  spaceBetween: 0,
+
+  navigation: {
+    nextEl: ".steps-button-next",
+    prevEl: ".steps-button-prev",
   },
 
   // And if we need scrollbar
