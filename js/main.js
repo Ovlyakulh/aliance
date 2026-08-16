@@ -50,10 +50,6 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".slider-button-prev",
   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
 });
 
 const stepsWiper = new Swiper(".steps-swiper", {
@@ -67,8 +63,4 @@ const stepsWiper = new Swiper(".steps-swiper", {
     prevEl: ".steps-button-prev",
   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
 });
