@@ -23,6 +23,7 @@ body {
   font-size: 0.875rem;
   line-height: 160%;
   color: #292d33;
+  max-width: 120rem;
 }
 .mobile-menu {
   display: none;
@@ -115,18 +116,21 @@ body {
   margin: 0;
   display: flex;
   flex-grow: 1; /* увеличиваеться на всю ширину свободного пространства */
+  justify-content: space-between;
   align-items: center;
   list-style-type: none;
   gap: 44px;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
-  padding: 0rem 0 0 2.625rem;
   height: 100%;
 }
 .header-navbar-item {
-  margin: 0.3125rem 0 0rem 0.5625rem;
-  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  /* position: absolute; */
 }
 .header-navbar-item:not(:last-child) {
   margin: 0;
@@ -137,9 +141,30 @@ body {
 .header-phone-link {
   color: inherit;
   text-decoration: none;
-  height: 100%;
+  /* height: 100%; */
+  position: relative;
 }
-
+.header-navbar-link::after,
+.header-phone-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: -1px;
+  background-color: #5c8ee5;
+  right: 2px;
+  bottom: -22px;
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.header-navbar-link::after:hover,
+.header-phone-link::after:hover {
+  transform: scaleX(1);
+}
+/* .header-navbar-link:hover,
+.header-phone-link:hover {
+  border-bottom: 2px solid #5c8ee5;
+} */
 .header-phone {
   display: flex;
   justify-content: center;
@@ -282,6 +307,8 @@ body {
 .steps {
   margin: 9.375rem 0 0rem 0;
   font-weight: 400;
+  width: 100%;
+  overflow: hidden; /*Говорит:Всё, что выходит за границы этого блока, не показывай.*/
 }
 .slider-buttons .background-blau {
   background-color: #5c8ee5;
@@ -386,8 +413,6 @@ body {
 .cards {
   display: flex;
   margin-top: 50px;
-
-  width: 1440px;
   flex-wrap: wrap;
 }
 .card {
@@ -396,22 +421,35 @@ body {
   justify-content: space-between;
   width: 480px;
   min-height: 593px;
-  flex-basis: 33%;
+  flex: 0 0 33.3333%;
   border: 1px solid #ebebf0;
+  /* overflow: hidden; */
+}
+.card:hover {
+  cursor: pointer;
+  border: 2px solid #5c8ee5;
 }
 .card-content {
   padding: 2.5rem 3.125rem;
-  width: 403px;
 }
 .card-title {
   color: #292d33;
   font-size: 28px;
   font-weight: 400;
+  line-height: 160%;
+}
+.card-title:hover {
+  color: #5c8ee5;
 }
 .card-text {
   color: #828a99;
 }
 .card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  z-index: 0;
 }
 @media (max-width: 1666px) {
   .header-navbar-item:not(:last-child) {
@@ -434,9 +472,10 @@ body {
 @media (max-width: 1200px) {
   .container {
     max-width: 65rem;
+    margin: 0 auto;
   }
   .header-navbar-item {
-    margin: 0 16px 0 0;
+    margin: 0 1rem 0 0;
   }
   .header-phone-blau {
     display: flex;
@@ -458,7 +497,7 @@ body {
     max-width: 65rem;
   }
   .header-content .button {
-    padding: 20px 53px;
+    padding: 1.25rem 3.3125rem;
   }
   html {
     font-size: 0.875rem;
@@ -470,10 +509,10 @@ body {
     display: none;
   }
   .header-content .button {
-    padding: 15px 43px;
+    padding: 0.9375rem 2.6875rem;
   }
   .seporator.header-seporator {
-    margin-top: 40px;
+    margin-top: 2.5rem;
   }
   .header-title {
     font-size: 4rem;
@@ -482,25 +521,28 @@ body {
     display: flex;
   }
   .steps-list {
-    padding-left: 5px;
+    padding-left: 0.3125rem;
   }
   .steps .slider-buttons {
     display: flex;
     justify-content: end;
   }
-  .steps-buttons.slider-button-prev,
-  .steps-buttons.slider-button-next {
-    display: flex;
-    flex-basis: 60px;
-    border-color: #5c8ee5;
-  }
   .steps-buttons {
     display: flex;
+  }
+  .card {
+    width: 398px;
+  }
+  .card-content {
+    padding: 2.5rem 3.125rem;
+    width: 398px;
+    box-sizing: border-box;
   }
 }
 @media (max-width: 992px) {
   .container {
     max-width: 55rem;
+    margin: 0 auto;
   }
   .header-navbar-item {
     width: 60px;
@@ -634,10 +676,14 @@ body {
   .seporator.header-seporator {
     margin-top: 30px;
   }
+  .card {
+    width: 364px;
+  }
 }
 @media (max-width: 768px) {
   .container {
     max-width: 50rem;
+    margin: 0 auto;
   }
   .header-title {
     font-size: 2.5rem;
@@ -651,13 +697,14 @@ body {
   .header-features {
     margin-top: 30px;
   }
-  .navbar {
-    width: 100%;
+  .card {
+    width: 550px;
   }
 }
 @media (max-width: 560px) {
   .container {
-    max-width: 90%;
+    max-width: 40rem;
+    margin: 0 auto;
   }
   .header-text {
     margin-top: 12px;
@@ -671,6 +718,9 @@ body {
   .burger {
     width: 80px;
     height: 68px;
+  }
+  .card {
+    width: 450px;
   }
 }
 @media (max-width: 375px) {
@@ -687,7 +737,9 @@ body {
   .header-button {
     height: 100%;
   }
-  .navbar {
-    width: 375px;
+  .card {
+    flex: 0 0 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 }

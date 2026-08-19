@@ -58,6 +58,21 @@ const stepsWiper = new Swiper(".steps-swiper", {
   slidesPerView: "auto",
   spaceBetween: 0,
 
+  breakpoints: {
+    // when window width is >= 320px
+    375: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 480px
+    560: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 4,
+    }
+  },
+
   navigation: {
     nextEl: ".steps-button-next",
     prevEl: ".steps-button-prev",
