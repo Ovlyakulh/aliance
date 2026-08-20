@@ -82,6 +82,13 @@ body {
   width: 9rem;
   height: 2.75rem;
 }
+.title {
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 120%;
+  color: #292d33;
+  font-weight: 400;
+}
 .header-images {
   background-image: url("../images/header-bg-img.jpg");
   background-size: cover; /* растягивает картинку на всю область блока */
@@ -136,6 +143,9 @@ body {
   margin: 0;
   margin-right: 4%;
 }
+.header-navbar-item:last-child {
+  margin-right: 28px;
+}
 
 .header-navbar-link,
 .header-phone-link {
@@ -147,19 +157,22 @@ body {
 .header-navbar-link::after,
 .header-phone-link::after {
   content: "";
-  width: 100%;
+  width: 0px;
   height: 2px;
-  bottom: -1px;
   background-color: #5c8ee5;
   right: 2px;
-  bottom: -22px;
+  bottom: -26px;
   position: absolute;
-  transform: scaleX(0);
-  transition: transform 0.2s;
+  transition: width 0.2s;
+  right: 0;
+  left: auto;
 }
-.header-navbar-link::after:hover,
-.header-phone-link::after:hover {
-  transform: scaleX(1);
+.header-navbar-link:hover::after,
+.header-phone-link:hover::after {
+  cursor: pointer;
+  width: 100%;
+  left: 0;
+  right: auto;
 }
 /* .header-navbar-link:hover,
 .header-phone-link:hover {
@@ -386,6 +399,10 @@ body {
   height: 0.0625rem;
   background: #5c8ee5;
   margin-right: 1.25rem;
+  transition: width 0.2s;
+}
+.steps-link:hover::before {
+  width: 3.75rem;
 }
 .steps-buttons {
   display: none;
@@ -419,6 +436,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-decoration: none;
   width: 480px;
   min-height: 593px;
   flex: 0 0 33.3333%;
@@ -438,7 +456,7 @@ body {
   font-weight: 400;
   line-height: 160%;
 }
-.card-title:hover {
+.card:hover .card-title {
   color: #5c8ee5;
 }
 .card-text {
@@ -450,6 +468,46 @@ body {
   height: auto;
   max-width: 100%;
   z-index: 0;
+}
+.private-labels-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.private-labels-card {
+  display: flex;
+  gap: 3.125rem;
+  text-decoration: none;
+  color: #828a99;
+  width: 45rem;
+}
+.private-labels-container {
+  width: 390px;
+}
+.private-labels-card:hover .private-labels-title {
+  color: #5c8ee5;
+  cursor: pointer;
+}
+.private-labels-image {
+  color: #828a99;
+  transition: color 0.3s;
+}
+
+.private-labels-card:hover .private-labels-image {
+  color: #5c8ee5;
+}
+.private-labels-card:hover {
+  border: 1px solid #5c8ee5;
+}
+.private-labels-mobile-cards {
+  display: none;
+}
+.private-labels-title {
+  margin-top: 20px;
+}
+.section-mobile {
+  display: none;
 }
 @media (max-width: 1666px) {
   .header-navbar-item:not(:last-child) {
@@ -467,6 +525,15 @@ body {
     padding: 0.1875rem 0rem 0 0rem;
     width: 8.8125rem;
     height: 6.2rem;
+  }
+   .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 300px; /*расти   сжиматься  базовый размер*/
+    
   }
 }
 @media (max-width: 1200px) {
@@ -535,7 +602,7 @@ body {
   }
   .card-content {
     padding: 2.5rem 3.125rem;
-    width: 398px;
+    max-width: 398px;
     box-sizing: border-box;
   }
 }
@@ -679,11 +746,25 @@ body {
   .card {
     width: 364px;
   }
+  .private-labels-title title {
+    font-size: 40px;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 300px; /*расти   сжиматься  базовый размер*/
+    
+  }
+  
 }
 @media (max-width: 768px) {
   .container {
     max-width: 50rem;
     margin: 0 auto;
+    text-align: center;
   }
   .header-title {
     font-size: 2.5rem;
@@ -697,8 +778,63 @@ body {
   .header-features {
     margin-top: 30px;
   }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .card {
-    width: 550px;
+    flex: 1 1 300px; /*расти   сжиматься  базовый размер*/
+    
+  }
+  .private-labels-title .title {
+    font-size: 36px;
+    line-height: 120%;
+  }
+  .private-labels {
+    display: none;
+  }
+  .private-labels-cards {
+    display: none;
+  }
+  .section-mobile {
+    display: block;
+    margin-top: 100px;
+  }
+  .private-labels-mobil .private-labels-title {
+    font-family: "Bebas Neue Book";
+    margin-top: 20px;
+  }
+  .private-labels-mobile-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .private-labels-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    max-width: 345px;
+  }
+  .private-labels-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    max-width: 345px;
+    padding: 30px;
+  }
+  .private-labels-text {
+    /* min-width: 345px; */
+    display: block;
+    max-width: 288px;
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .card-content {
+    padding: 1.5rem;
   }
 }
 @media (max-width: 560px) {
@@ -707,8 +843,8 @@ body {
     margin: 0 auto;
   }
   .header-text {
-    margin-top: 12px;
-    margin-bottom: 18px;
+    margin-top: 0.75rem;
+    margin-bottom: 1.125rem;
   }
 
   .navbar-logo-link {
@@ -716,11 +852,17 @@ body {
     justify-content: center;
   }
   .burger {
-    width: 80px;
-    height: 68px;
+    width: 5rem;
+    height: 4.25rem;
   }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .card {
-    width: 450px;
+    flex: 1 1 300px; /*расти   сжиматься  базовый размер*/
+    
   }
 }
 @media (max-width: 375px) {
@@ -741,5 +883,6 @@ body {
     flex: 0 0 100%;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 6px;
   }
 }
